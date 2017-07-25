@@ -1,0 +1,32 @@
+pep-lb:
+  image: rancher/lb-service-haproxy:v0.7.1
+  ports:
+  - 8000:8000/tcp
+  labels:
+    io.rancher.container.agent.role: environmentAdmin
+    io.rancher.container.create_agent: 'true'
+    io.rancher.scheduler.global: 'true'
+pep:
+  image: 912028902405.dkr.ecr.eu-west-1.amazonaws.com/policy_enforcement_proxy:master
+  environment:
+    OPENAM_POLICY_ENDPOINT_URL: https://sso-uat.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+    OPENAM_POLICY_ENDPOINT_METHOD: POST
+    OPENAM_POLICY_APPLICATION_NAME: API_ASSETS
+    HEADER_PREFIX: X-Application-
+    PORT: '8000'
+    UPSTREAM_NAME: api
+    UPSTREAM_PORT: '8000'
+  stdin_open: true
+  tty: true
+  links:
+  - test-api:api
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.global: 'true'
+test-api:
+  image: nginx:latest
+  stdin_open: true
+  tty: true
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.global: 'true'
