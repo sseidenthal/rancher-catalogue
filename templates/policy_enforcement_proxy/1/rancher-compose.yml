@@ -28,15 +28,15 @@
       required: true
       type: service
     - 
-      variable: API_IMAGE
-      label: API_IMAGE
+      variable: API_IMAGE_URL
+      label: API_IMAGE_URL
       description: Image Url of the Api
       required: true
       default: "912028902405.dkr.ecr.eu-west-1.amazonaws.com/pcc_mobility_api_mobile_view"
     - 
-      variable: API_IMAGE
+      variable: API_IMAGE_TAG
       description: Choose a tag you want to use for the API
-      label: API_IMAGE
+      label: API_IMAGE_TAG
       required: true
       default: master
       type: enum

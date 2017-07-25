@@ -16,7 +16,7 @@ pep:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.global: 'true'
 api:
-  image: ${IMAGE}:${BRANCH}
+  image: ${API_IMAGE_URL}:${API_IMAGE_TAG}
   environment:
     AGGREGATOR_HOST: aggregator
     AGGREGATOR_PORT: 80
