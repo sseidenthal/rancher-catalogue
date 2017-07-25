@@ -3,11 +3,126 @@
   version: "1.0-rancher"
   description: "Policy Enforcment Proxy - PEP"
   questions:
-    - variable: "API_LINK"
-      description: Link to the APi
-      label: "Link to the APi"
-      required: true
-      type: "service"
+      - variable: "AGGREGATOR_HOST"
+        description: "AGGREGATOR_PORT"
+        label: "AGGREGATOR_PORT"
+        required: true
+        type: string
+      - variable: "AGGREGATOR_PORT"
+        description: "ENVIRONMENT"
+        label: "ENVIRONMENT"
+        required: true
+        type: string
+      - variable: "ENVIRONMENT"
+        description: "MYSQL_CORE_DATABASE"
+        label: "MYSQL_CORE_DATABASE"
+        required: true
+        type: string
+      - variable: "MYSQL_CORE_DATABASE"
+        description: "MYSQL_CORE_HOST"
+        label: "MYSQL_CORE_HOST"
+        required: true
+        type: string
+      - variable: "MYSQL_CORE_HOST"
+        description: "MYSQL_CORE_PASSWORD"
+        label: "MYSQL_CORE_PASSWORD"
+        required: true
+        type: string
+      - variable: "MYSQL_CORE_PASSWORD"
+        description: "MYSQL_CORE_USER"
+        label: "MYSQL_CORE_USER"
+        required: true
+        type: string
+      - variable: "MYSQL_CORE_USER"
+        description: "MYSQL_CONTACTS_DATABASE"
+        label: "MYSQL_CONTACTS_DATABASE"
+        required: true
+        type: string
+      - variable: "MYSQL_CONTACTS_DATABASE"
+        description: "MYSQL_CONTACTS_HOST"
+        label: "MYSQL_CONTACTS_HOST"
+        required: true
+        type: string
+      - variable: "MYSQL_CONTACTS_HOST"
+        description: "MYSQL_CONTACTS_USER"
+        label: "MYSQL_CONTACTS_USER"
+        required: true
+        type: string
+      - variable: "MYSQL_CONTACTS_USER"
+        description: "MYSQL_CONTACTS_PASSWORD"
+        label: "MYSQL_CONTACTS_PASSWORD"
+        required: true
+        type: string
+      - variable: "MYSQL_CONTACTS_PASSWORD"
+        description: "MYSQL_ASSETS_DATABASE"
+        label: "MYSQL_ASSETS_DATABASE"
+        required: true
+        type: string
+      - variable: "MYSQL_ASSETS_DATABASE"
+        description: "MYSQL_ASSETS_HOST"
+        label: "MYSQL_ASSETS_HOST"
+        required: true
+        type: string
+      - variable: "MYSQL_ASSETS_HOST"
+        description: "MYSQL_ASSETS_USER"
+        label: "MYSQL_ASSETS_USER"
+        required: true
+        type: string
+      - variable: "MYSQL_ASSETS_USER"
+        description: "MYSQL_ASSETS_PASSWORD"
+        label: "MYSQL_ASSETS_PASSWORD"
+        required: true
+        type: string
+      - variable: "MYSQL_ASSETS_PASSWORD"
+        description: "REAPER_PRO_TYPE"
+        label: "REAPER_PRO_TYPE"
+        required: true
+        type: string
+      - variable: "REAPER_PRO_TYPE"
+        description: "MONGO_USER"
+        label: "MONGO_USER"
+        required: true
+        type: string
+      - variable: "MONGO_USER"
+        description: "MONGO_PASSWORD"
+        label: "MONGO_PASSWORD"
+        required: true
+        type: string
+      - variable: "MONGO_PASSWORD"
+        description: "ACCEPTED_TYPE1"
+        label: "ACCEPTED_TYPE1"
+        required: true
+        type: string
+      - variable: "ACCEPTED_TYPE1"
+        description: "ACCEPTED_TYPE2"
+        label: "ACCEPTED_TYPE2"
+        required: true
+        type: string
+      - variable: "ACCEPTED_TYPE2"
+        description: "MYSQL_MOBILE_SETTINGS_DATABASE"
+        label: "MYSQL_MOBILE_SETTINGS_DATABASE"
+        required: true
+        type: string
+      - variable: "MYSQL_MOBILE_SETTINGS_DATABASE"
+        description: "MYSQL_MOBILE_SETTINGS_HOST"
+        label: "MYSQL_MOBILE_SETTINGS_HOST"
+        required: true
+        type: string
+      - variable: "MYSQL_MOBILE_SETTINGS_HOST"
+        description: "MYSQL_MOBILE_SETTINGS_USER"
+        label: "MYSQL_MOBILE_SETTINGS_USER"
+        required: true
+        type: string
+      - variable: "MYSQL_MOBILE_SETTINGS_USER"
+        description: "MYSQL_MOBILE_SETTINGS_PASSWORD"
+        label: "MYSQL_MOBILE_SETTINGS_PASSWORD"
+        required: true
+        type: string
+      - variable: "MY gSQL_MOBILE_SETTINGS_PASSWORD"
+        description g:
+        label:
+        required: true
+        type: string
     - variable: "OPENAM_POLICY_ENDPOINT_URL"
       description: "OpenAM Endpoint which handles policies evaluation"
       label: "URL"
