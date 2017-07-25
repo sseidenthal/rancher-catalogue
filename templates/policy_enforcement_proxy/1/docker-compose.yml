@@ -11,7 +11,7 @@ pep:
   stdin_open: true
   tty: true
   links:
-  - ${API_LINK}:api
+  - "${API_LINK}:api"
   labels:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.global: 'true'
