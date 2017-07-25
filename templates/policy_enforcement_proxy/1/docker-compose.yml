@@ -1,17 +1,56 @@
-pep:
-  image: 912028902405.dkr.ecr.eu-west-1.amazonaws.com/policy_enforcement_proxy:master
-  environment:
-    OPENAM_POLICY_ENDPOINT_URL: ${OPENAM_POLICY_ENDPOINT_URL}
-    OPENAM_POLICY_ENDPOINT_METHOD: ${OPENAM_POLICY_ENDPOINT_METHOD}
-    OPENAM_POLICY_APPLICATION_NAME: ${OPENAM_POLICY_APPLICATION_NAME}
-    HEADER_PREFIX: ${HEADER_PREFIX}
-    PORT: ${PORT}
-    UPSTREAM_NAME: ${UPSTREAM_NAME}
-    UPSTREAM_PORT: ${UPSTREAM_PORT}
+--- 
+pep: 
+  api: 
+    environment: 
+      ACCEPTED_TYPE1: "${ACCEPTED_TYPE1}"
+      ACCEPTED_TYPE2: "${ACCEPTED_TYPE2}"
+      AGGREGATOR_HOST: "${AGGREGATOR_HOST}"
+      AGGREGATOR_PORT: "${AGGREGATOR_PORT}"
+      ENVIRONMENT: "${ENVIRONMENT}"
+      MONGO_PASSWORD: "${MONGO_PASSWORD}"
+      MONGO_USER: "${MONGO_USER}"
+      MYSQL_ASSETS_DATABASE: "${MYSQL_ASSETS_DATABASE}"
+      MYSQL_ASSETS_HOST: "${MYSQL_ASSETS_HOST}"
+      MYSQL_ASSETS_PASSWORD: "${MYSQL_ASSETS_PASSWORD}"
+      MYSQL_ASSETS_USER: "${MYSQL_ASSETS_USER}"
+      MYSQL_CONTACTS_DATABASE: "${MYSQL_CONTACTS_DATABASE}"
+      MYSQL_CONTACTS_HOST: "${MYSQL_CONTACTS_HOST}"
+      MYSQL_CONTACTS_PASSWORD: "${MYSQL_CONTACTS_PASSWORD}"
+      MYSQL_CONTACTS_USER: "${MYSQL_CONTACTS_USER}"
+      MYSQL_CORE_DATABASE: "${MYSQL_CORE_DATABASE}}"
+      MYSQL_CORE_HOST: "${MYSQL_CORE_HOST}"
+      MYSQL_CORE_PASSWORD: "${MYSQL_CORE_PASSWORD}"
+      MYSQL_CORE_USER: "${MYSQL_CORE_USER}"
+      MYSQL_MOBILE_SETTINGS_DATABASE: "${MYSQL_MOBILE_SETTINGS_DATABASE}"
+      MYSQL_MOBILE_SETTINGS_HOST: "${MYSQL_MOBILE_SETTINGS_HOST}"
+      MYSQL_MOBILE_SETTINGS_PASSWORD: "${MYSQL_MOBILE_SETTINGS_PASSWORD}"
+      MYSQL_MOBILE_SETTINGS_USER: "${MYSQL_MOBILE_SETTINGS_USER}"
+      REAPER_PRO_TYPE: "${REAPER_PRO_TYPE}"
+    external_links: 
+      - "ControlCenter-Infra/db-maria:mysql"
+      - "ControlCenter-Infra/db-mongo:mongo"
+      - "ControlCenter-v2-TEM/service-aggregate:aggregate"
+      - "ControlCenter-Infra/host-lb-dmz-prod-api-mobile:api-mobile.controlcenter.lu"
+      - "ControlCenter-Infra/host-lb-dmz-prod-apps:apps.controlcenter.lu"
+      - "ControlCenter-Infra/host-lb-dmz-prod-cc:cc.post.lu"
+    image: "912028902405.dkr.ecr.eu-west-1.amazonaws.com/pcc_mobility_api_mobile_view:master"
+    labels: 
+      io.rancher.container.pull_image: always
+    stdin_open: true
+    tty: true
+  environment: 
+    HEADER_PREFIX: "${HEADER_PREFIX}"
+    OPENAM_POLICY_APPLICATION_NAME: "${OPENAM_POLICY_APPLICATION_NAME}"
+    OPENAM_POLICY_ENDPOINT_METHOD: "${OPENAM_POLICY_ENDPOINT_METHOD}"
+    OPENAM_POLICY_ENDPOINT_URL: "${OPENAM_POLICY_ENDPOINT_URL}"
+    PORT: "${PORT}"
+    UPSTREAM_NAME: "${UPSTREAM_NAME}"
+    UPSTREAM_PORT: "${UPSTREAM_PORT}"
+  image: "912028902405.dkr.ecr.eu-west-1.amazonaws.com/policy_enforcement_proxy:master"
+  labels: 
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.global: "true"
+  links: 
+    - "pep-manual/test:api"
   stdin_open: true
   tty: true
-  links:
-  - pep-manual/test:api
-  labels:
-    io.rancher.container.pull_image: always
-    io.rancher.scheduler.global: 'true'

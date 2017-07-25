@@ -1,168 +1,200 @@
-.catalog:
-  name: "Policy Enforcment Proxy - PEP"
-  version: "1.0-rancher"
+--- 
+.catalog: 
   description: "Policy Enforcment Proxy - PEP"
-  questions:
-      - variable: "AGGREGATOR_HOST"
-        description: "AGGREGATOR_PORT"
-        label: "AGGREGATOR_PORT"
-        required: true
-        type: string
-      - variable: "AGGREGATOR_PORT"
-        description: "ENVIRONMENT"
-        label: "ENVIRONMENT"
-        required: true
-        type: string
-      - variable: "ENVIRONMENT"
-        description: "MYSQL_CORE_DATABASE"
-        label: "MYSQL_CORE_DATABASE"
-        required: true
-        type: string
-      - variable: "MYSQL_CORE_DATABASE"
-        description: "MYSQL_CORE_HOST"
-        label: "MYSQL_CORE_HOST"
-        required: true
-        type: string
-      - variable: "MYSQL_CORE_HOST"
-        description: "MYSQL_CORE_PASSWORD"
-        label: "MYSQL_CORE_PASSWORD"
-        required: true
-        type: string
-      - variable: "MYSQL_CORE_PASSWORD"
-        description: "MYSQL_CORE_USER"
-        label: "MYSQL_CORE_USER"
-        required: true
-        type: string
-      - variable: "MYSQL_CORE_USER"
-        description: "MYSQL_CONTACTS_DATABASE"
-        label: "MYSQL_CONTACTS_DATABASE"
-        required: true
-        type: string
-      - variable: "MYSQL_CONTACTS_DATABASE"
-        description: "MYSQL_CONTACTS_HOST"
-        label: "MYSQL_CONTACTS_HOST"
-        required: true
-        type: string
-      - variable: "MYSQL_CONTACTS_HOST"
-        description: "MYSQL_CONTACTS_USER"
-        label: "MYSQL_CONTACTS_USER"
-        required: true
-        type: string
-      - variable: "MYSQL_CONTACTS_USER"
-        description: "MYSQL_CONTACTS_PASSWORD"
-        label: "MYSQL_CONTACTS_PASSWORD"
-        required: true
-        type: string
-      - variable: "MYSQL_CONTACTS_PASSWORD"
-        description: "MYSQL_ASSETS_DATABASE"
-        label: "MYSQL_ASSETS_DATABASE"
-        required: true
-        type: string
-      - variable: "MYSQL_ASSETS_DATABASE"
-        description: "MYSQL_ASSETS_HOST"
-        label: "MYSQL_ASSETS_HOST"
-        required: true
-        type: string
-      - variable: "MYSQL_ASSETS_HOST"
-        description: "MYSQL_ASSETS_USER"
-        label: "MYSQL_ASSETS_USER"
-        required: true
-        type: string
-      - variable: "MYSQL_ASSETS_USER"
-        description: "MYSQL_ASSETS_PASSWORD"
-        label: "MYSQL_ASSETS_PASSWORD"
-        required: true
-        type: string
-      - variable: "MYSQL_ASSETS_PASSWORD"
-        description: "REAPER_PRO_TYPE"
-        label: "REAPER_PRO_TYPE"
-        required: true
-        type: string
-      - variable: "REAPER_PRO_TYPE"
-        description: "MONGO_USER"
-        label: "MONGO_USER"
-        required: true
-        type: string
-      - variable: "MONGO_USER"
-        description: "MONGO_PASSWORD"
-        label: "MONGO_PASSWORD"
-        required: true
-        type: string
-      - variable: "MONGO_PASSWORD"
-        description: "ACCEPTED_TYPE1"
-        label: "ACCEPTED_TYPE1"
-        required: true
-        type: string
-      - variable: "ACCEPTED_TYPE1"
-        description: "ACCEPTED_TYPE2"
-        label: "ACCEPTED_TYPE2"
-        required: true
-        type: string
-      - variable: "ACCEPTED_TYPE2"
-        description: "MYSQL_MOBILE_SETTINGS_DATABASE"
-        label: "MYSQL_MOBILE_SETTINGS_DATABASE"
-        required: true
-        type: string
-      - variable: "MYSQL_MOBILE_SETTINGS_DATABASE"
-        description: "MYSQL_MOBILE_SETTINGS_HOST"
-        label: "MYSQL_MOBILE_SETTINGS_HOST"
-        required: true
-        type: string
-      - variable: "MYSQL_MOBILE_SETTINGS_HOST"
-        description: "MYSQL_MOBILE_SETTINGS_USER"
-        label: "MYSQL_MOBILE_SETTINGS_USER"
-        required: true
-        type: string
-      - variable: "MYSQL_MOBILE_SETTINGS_USER"
-        description: "MYSQL_MOBILE_SETTINGS_PASSWORD"
-        label: "MYSQL_MOBILE_SETTINGS_PASSWORD"
-        required: true
-        type: string
-      - variable: "MY gSQL_MOBILE_SETTINGS_PASSWORD"
-        description g:
-        label:
-        required: true
-        type: string
-    - variable: "OPENAM_POLICY_ENDPOINT_URL"
-      description: "OpenAM Endpoint which handles policies evaluation"
-      label: "URL"
-      default: "https://sso-uat.controlcenter.lu/sso/json/pcc/policies?_action=evaluate"
+  name: "Policy Enforcment Proxy - PEP"
+  questions: 
+    - 
+      description: AGGREGATOR_PORT
+      label: AGGREGATOR_PORT
       required: true
       type: string
-    - variable: "OPENAM_POLICY_ENDPOINT_METHOD"
+      variable: AGGREGATOR_HOST
+    - 
+      description: ENVIRONMENT
+      label: ENVIRONMENT
+      required: true
+      type: string
+      variable: AGGREGATOR_PORT
+    - 
+      description: MYSQL_CORE_DATABASE
+      label: MYSQL_CORE_DATABASE
+      required: true
+      type: string
+      variable: ENVIRONMENT
+    - 
+      description: MYSQL_CORE_HOST
+      label: MYSQL_CORE_HOST
+      required: true
+      type: string
+      variable: MYSQL_CORE_DATABASE
+    - 
+      description: MYSQL_CORE_PASSWORD
+      label: MYSQL_CORE_PASSWORD
+      required: true
+      type: string
+      variable: MYSQL_CORE_HOST
+    - 
+      description: MYSQL_CORE_USER
+      label: MYSQL_CORE_USER
+      required: true
+      type: string
+      variable: MYSQL_CORE_PASSWORD
+    - 
+      description: MYSQL_CONTACTS_DATABASE
+      label: MYSQL_CONTACTS_DATABASE
+      required: true
+      type: string
+      variable: MYSQL_CORE_USER
+    - 
+      description: MYSQL_CONTACTS_HOST
+      label: MYSQL_CONTACTS_HOST
+      required: true
+      type: string
+      variable: MYSQL_CONTACTS_DATABASE
+    - 
+      description: MYSQL_CONTACTS_USER
+      label: MYSQL_CONTACTS_USER
+      required: true
+      type: string
+      variable: MYSQL_CONTACTS_HOST
+    - 
+      description: MYSQL_CONTACTS_PASSWORD
+      label: MYSQL_CONTACTS_PASSWORD
+      required: true
+      type: string
+      variable: MYSQL_CONTACTS_USER
+    - 
+      description: MYSQL_ASSETS_DATABASE
+      label: MYSQL_ASSETS_DATABASE
+      required: true
+      type: string
+      variable: MYSQL_CONTACTS_PASSWORD
+    - 
+      description: MYSQL_ASSETS_HOST
+      label: MYSQL_ASSETS_HOST
+      required: true
+      type: string
+      variable: MYSQL_ASSETS_DATABASE
+    - 
+      description: MYSQL_ASSETS_USER
+      label: MYSQL_ASSETS_USER
+      required: true
+      type: string
+      variable: MYSQL_ASSETS_HOST
+    - 
+      description: MYSQL_ASSETS_PASSWORD
+      label: MYSQL_ASSETS_PASSWORD
+      required: true
+      type: string
+      variable: MYSQL_ASSETS_USER
+    - 
+      description: REAPER_PRO_TYPE
+      label: REAPER_PRO_TYPE
+      required: true
+      type: string
+      variable: MYSQL_ASSETS_PASSWORD
+    - 
+      description: MONGO_USER
+      label: MONGO_USER
+      required: true
+      type: string
+      variable: REAPER_PRO_TYPE
+    - 
+      description: MONGO_PASSWORD
+      label: MONGO_PASSWORD
+      required: true
+      type: string
+      variable: MONGO_USER
+    - 
+      description: ACCEPTED_TYPE1
+      label: ACCEPTED_TYPE1
+      required: true
+      type: string
+      variable: MONGO_PASSWORD
+    - 
+      description: ACCEPTED_TYPE2
+      label: ACCEPTED_TYPE2
+      required: true
+      type: string
+      variable: ACCEPTED_TYPE1
+    - 
+      description: MYSQL_MOBILE_SETTINGS_DATABASE
+      label: MYSQL_MOBILE_SETTINGS_DATABASE
+      required: true
+      type: string
+      variable: ACCEPTED_TYPE2
+    - 
+      description: MYSQL_MOBILE_SETTINGS_HOST
+      label: MYSQL_MOBILE_SETTINGS_HOST
+      required: true
+      type: string
+      variable: MYSQL_MOBILE_SETTINGS_DATABASE
+    - 
+      description: MYSQL_MOBILE_SETTINGS_USER
+      label: MYSQL_MOBILE_SETTINGS_USER
+      required: true
+      type: string
+      variable: MYSQL_MOBILE_SETTINGS_HOST
+    - 
+      description: MYSQL_MOBILE_SETTINGS_PASSWORD
+      label: MYSQL_MOBILE_SETTINGS_PASSWORD
+      required: true
+      type: string
+      variable: MYSQL_MOBILE_SETTINGS_USER
+    - 
+      description: ~
+      label: ~
+      required: true
+      type: string
+      variable: MYSQL_MOBILE_SETTINGS_PASSWORD
+    - 
+      default: "https://sso-uat.controlcenter.lu/sso/json/pcc/policies?_action=evaluate"
+      description: "OpenAM Endpoint which handles policies evaluation"
+      label: URL
+      required: true
+      type: string
+      variable: OPENAM_POLICY_ENDPOINT_URL
+    - 
+      default: POST
       description: "Method to be used"
       label: "HTTP Method"
-      default: "POST"
       required: true
       type: string
-    - variable: "OPENAM_POLICY_APPLICATION_NAME"
+      variable: OPENAM_POLICY_ENDPOINT_METHOD
+    - 
       description: "Applicatin Name, OpemAM Policy Set"
       label: "OpemAM Policy Set"
-      required: true
-      type: enum
       options: 
         - API_ASSETS
-    - variable: "HEADER_PREFIX"
-      description: "HEADER_PREFIX"
-      label: "HEADER_PREFIX"
-      default: "X-Application-"
+      required: true
+      type: enum
+      variable: OPENAM_POLICY_APPLICATION_NAME
+    - 
+      default: X-Application-
+      description: HEADER_PREFIX
+      label: HEADER_PREFIX
       required: true
       type: string
-    - variable: "PORT"
-      description: "PORT"
-      label: "PORT"
+      variable: HEADER_PREFIX
+    - 
       default: "8000"
+      description: PORT
+      label: PORT
       required: true
       type: string
-    - variable: "UPSTREAM_NAME"
-      description: "UPSTREAM_NAME"
-      label: "UPSTREAM_NAME"
-      default: "api"
+      variable: PORT
+    - 
+      default: api
+      description: UPSTREAM_NAME
+      label: UPSTREAM_NAME
       required: true
       type: string
-    - variable: "UPSTREAM_PORT"
-      description: "UPSTREAM_PORT"
-      label: "UPSTREAM_PORT"
+      variable: UPSTREAM_NAME
+    - 
       default: "8000"
+      description: UPSTREAM_PORT
+      label: UPSTREAM_PORT
       required: true
       type: string
+      variable: UPSTREAM_PORT
+  version: 1.0-rancher
