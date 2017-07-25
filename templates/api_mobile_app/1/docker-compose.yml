@@ -1,20 +1,3 @@
-pep:
-  image: 912028902405.dkr.ecr.eu-west-1.amazonaws.com/policy_enforcement_proxy:master
-  environment:
-    OPENAM_POLICY_ENDPOINT_URL: ${OPENAM_POLICY_ENDPOINT_URL}
-    OPENAM_POLICY_ENDPOINT_METHOD: ${OPENAM_POLICY_ENDPOINT_METHOD}
-    OPENAM_POLICY_APPLICATION_NAME: ${OPENAM_POLICY_APPLICATION_NAME}
-    HEADER_PREFIX: ${HEADER_PREFIX}
-    PORT: ${PORT}
-    UPSTREAM_NAME: ${UPSTREAM_NAME}
-    UPSTREAM_PORT: ${UPSTREAM_PORT}
-  stdin_open: true
-  tty: true
-  external_links:
-  - pep-manual/test:api
-  labels:
-    io.rancher.container.pull_image: always
-    io.rancher.scheduler.global: 'true'
 api:
   image: ${API_IMAGE_URL}:${API_IMAGE_TAG}
   environment:
@@ -53,3 +36,20 @@ api:
   tty: true
   labels:
     io.rancher.container.pull_image: always  
+pep:
+  image: 912028902405.dkr.ecr.eu-west-1.amazonaws.com/policy_enforcement_proxy:master
+  environment:
+    OPENAM_POLICY_ENDPOINT_URL: ${OPENAM_POLICY_ENDPOINT_URL}
+    OPENAM_POLICY_ENDPOINT_METHOD: ${OPENAM_POLICY_ENDPOINT_METHOD}
+    OPENAM_POLICY_APPLICATION_NAME: ${OPENAM_POLICY_APPLICATION_NAME}
+    HEADER_PREFIX: ${HEADER_PREFIX}
+    PORT: ${PORT}
+    UPSTREAM_NAME: ${UPSTREAM_NAME}
+    UPSTREAM_PORT: ${UPSTREAM_PORT}
+  stdin_open: true
+  tty: true
+  external_links:
+  - pep-manual/test:api
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.global: 'true'
