@@ -3,7 +3,7 @@
   version: "1.0-rancher"
   description: "Policy Enforcment Proxy - PEP"
   questions:
-    - variable: "api_link"
+    - variable: "API_LINK"
       description: Link to the APi
       label: "Link to the APi"
       required: true
