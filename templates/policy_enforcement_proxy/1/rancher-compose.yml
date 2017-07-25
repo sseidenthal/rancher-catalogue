@@ -4,26 +4,55 @@
   name: "Policy Enforcment Proxy - PEP"
   questions: 
     - 
-      description: AGGREGATOR_PORT
-      label: AGGREGATOR_PORT
+      description: MYSQL_CORE_HOST
+      label: MYSQL_CORE_HOST
       required: true
-      type: string
-      variable: AGGREGATOR_HOST
+      type: service
+      variable: MYSQL_CORE_HOST
+    - 
+      description: MYSQL_CONTACTS_HOST
+      label: MYSQL_CONTACTS_HOST
+      required: true
+      type: service
+      variable: MYSQL_CONTACTS_HOST
+    - 
+      description: MYSQL_ASSETS_HOST
+      label: MYSQL_ASSETS_HOST
+      required: true
+      type: service
+      variable: MYSQL_ASSETS_HOST
+    - 
+      description: MYSQL_MOBILE_SETTINGS_HOST
+      label: MYSQL_MOBILE_SETTINGS_HOST
+      required: true
+      type: service
+      variable: MYSQL_MOBILE_SETTINGS_HOST
+
+    - 
+      variable: API_IMAGE
+      description: Image Url of the Api
+      label: API_IMAGE
+      required: true
+      default: "912028902405.dkr.ecr.eu-west-1.amazonaws.com/pcc_mobility_api_mobile_view"
+    - 
+      variable: API_IMAGE_TAG
+      description: Choose a tag you want to use for the API
+      label: API_TAG
+      required: true
+      default: master
+      type: enum
+        - "master"
+        - "uat"
+        - "qa"
     - 
       description: ENVIRONMENT
       label: ENVIRONMENT
       required: true
       type: string
-      variable: AGGREGATOR_PORT
+      variable: ENVIRONMENT
     - 
       description: MYSQL_CORE_DATABASE
       label: MYSQL_CORE_DATABASE
-      required: true
-      type: string
-      variable: ENVIRONMENT
-    - 
-      description: MYSQL_CORE_HOST
-      label: MYSQL_CORE_HOST
       required: true
       type: string
       variable: MYSQL_CORE_DATABASE
@@ -32,22 +61,16 @@
       label: MYSQL_CORE_PASSWORD
       required: true
       type: string
-      variable: MYSQL_CORE_HOST
+      variable: MYSQL_CORE_PASSWORD
     - 
       description: MYSQL_CORE_USER
       label: MYSQL_CORE_USER
       required: true
       type: string
-      variable: MYSQL_CORE_PASSWORD
+      variable: MYSQL_CORE_USER
     - 
       description: MYSQL_CONTACTS_DATABASE
       label: MYSQL_CONTACTS_DATABASE
-      required: true
-      type: string
-      variable: MYSQL_CORE_USER
-    - 
-      description: MYSQL_CONTACTS_HOST
-      label: MYSQL_CONTACTS_HOST
       required: true
       type: string
       variable: MYSQL_CONTACTS_DATABASE
@@ -56,22 +79,16 @@
       label: MYSQL_CONTACTS_USER
       required: true
       type: string
-      variable: MYSQL_CONTACTS_HOST
+      variable: MYSQL_CONTACTS_USER
     - 
       description: MYSQL_CONTACTS_PASSWORD
       label: MYSQL_CONTACTS_PASSWORD
       required: true
       type: string
-      variable: MYSQL_CONTACTS_USER
+      variable: MYSQL_CONTACTS_PASSWORD
     - 
       description: MYSQL_ASSETS_DATABASE
       label: MYSQL_ASSETS_DATABASE
-      required: true
-      type: string
-      variable: MYSQL_CONTACTS_PASSWORD
-    - 
-      description: MYSQL_ASSETS_HOST
-      label: MYSQL_ASSETS_HOST
       required: true
       type: string
       variable: MYSQL_ASSETS_DATABASE
@@ -80,52 +97,46 @@
       label: MYSQL_ASSETS_USER
       required: true
       type: string
-      variable: MYSQL_ASSETS_HOST
+      variable: MYSQL_ASSETS_USER
     - 
       description: MYSQL_ASSETS_PASSWORD
       label: MYSQL_ASSETS_PASSWORD
       required: true
       type: string
-      variable: MYSQL_ASSETS_USER
+      variable: MYSQL_ASSETS_PASSWORD
     - 
       description: REAPER_PRO_TYPE
       label: REAPER_PRO_TYPE
       required: true
       type: string
-      variable: MYSQL_ASSETS_PASSWORD
+      variable: REAPER_PRO_TYPE
     - 
       description: MONGO_USER
       label: MONGO_USER
       required: true
       type: string
-      variable: REAPER_PRO_TYPE
+      variable: MONGO_USER
     - 
       description: MONGO_PASSWORD
       label: MONGO_PASSWORD
       required: true
       type: string
-      variable: MONGO_USER
+      variable: MONGO_PASSWORD
     - 
       description: ACCEPTED_TYPE1
       label: ACCEPTED_TYPE1
       required: true
       type: string
-      variable: MONGO_PASSWORD
+      variable: ACCEPTED_TYPE1
     - 
       description: ACCEPTED_TYPE2
       label: ACCEPTED_TYPE2
       required: true
       type: string
-      variable: ACCEPTED_TYPE1
+      variable: ACCEPTED_TYPE2
     - 
       description: MYSQL_MOBILE_SETTINGS_DATABASE
       label: MYSQL_MOBILE_SETTINGS_DATABASE
-      required: true
-      type: string
-      variable: ACCEPTED_TYPE2
-    - 
-      description: MYSQL_MOBILE_SETTINGS_HOST
-      label: MYSQL_MOBILE_SETTINGS_HOST
       required: true
       type: string
       variable: MYSQL_MOBILE_SETTINGS_DATABASE
@@ -134,16 +145,16 @@
       label: MYSQL_MOBILE_SETTINGS_USER
       required: true
       type: string
-      variable: MYSQL_MOBILE_SETTINGS_HOST
+      variable: MYSQL_MOBILE_SETTINGS_USER
     - 
       description: MYSQL_MOBILE_SETTINGS_PASSWORD
       label: MYSQL_MOBILE_SETTINGS_PASSWORD
       required: true
       type: string
-      variable: MYSQL_MOBILE_SETTINGS_USER
+      variable: MYSQL_MOBILE_SETTINGS_PASSWORD
     - 
-      description: ~
-      label: ~
+      description: MYSQL_MOBILE_SETTINGS_PASSWORD
+      label: MYSQL_MOBILE_SETTINGS_PASSWORD
       required: true
       type: string
       variable: MYSQL_MOBILE_SETTINGS_PASSWORD
