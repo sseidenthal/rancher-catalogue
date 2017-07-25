@@ -40,9 +40,10 @@
       required: true
       default: master
       type: enum
-        - "master"
-        - "uat"
-        - "qa"
+      options:
+        - master
+        - uat
+        - qa
     - 
       description: ENVIRONMENT
       label: ENVIRONMENT
