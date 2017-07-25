@@ -1,7 +1,7 @@
 --- 
 .catalog: 
-  description: "Policy Enforcment Proxy - PEP"
-  name: "Policy Enforcment Proxy - PEP"
+  description: "Mobile APP Backend"
+  name: "Mobile APP Backend"
   questions: 
     - 
       description: MYSQL_CORE_HOST

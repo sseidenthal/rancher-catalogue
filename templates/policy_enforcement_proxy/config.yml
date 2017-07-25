@@ -1,5 +1,5 @@
-name: Policy Enforcement Proxy - PEP
+name: Mobile APP Backend
 description: |
-  Proxy which enforces OpenAM Policies
+  Mobile APP Backend
 version: 1.0-rancher
 category: POST
