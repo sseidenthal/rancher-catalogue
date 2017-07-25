@@ -10,8 +10,6 @@ pep:
     UPSTREAM_PORT: ${UPSTREAM_PORT}
   stdin_open: true
   tty: true
-  links:
-  - test-api:api
   labels:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.global: 'true'
