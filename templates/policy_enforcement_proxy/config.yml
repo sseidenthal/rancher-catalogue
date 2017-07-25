@@ -1,5 +1,5 @@
 name: Policy Enforcement Proxy - PEP
 description: |
-  Enforces OpenAM Policies
+  Proxy which enforces OpenAM Policies
 version: 1.0-rancher
 category: POST

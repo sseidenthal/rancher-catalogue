@@ -8,3 +8,46 @@
       label: "Link to the APi"
       required: true
       type: "service"
+    - variable: "OPENAM_POLICY_ENDPOINT_URL"
+      description: "OpenAM Endpoint which handles policies evaluation"
+      label: "URL"
+      default: "https://sso-uat.controlcenter.lu/sso/json/pcc/policies?_action=evaluate"
+      required: true
+      type: string
+    - variable: "OPENAM_POLICY_ENDPOINT_METHOD"
+      description: "Method to be used"
+      label: "HTTP Method"
+      default: "POST"
+      required: true
+      type: string
+    - variable: "OPENAM_POLICY_APPLICATION_NAME"
+      description: "Applicatin Name, OpemAM Policy Set"
+      label: "OpemAM Policy Set"
+      required: true
+      type: enum
+      options: 
+        - API_ASSETS
+    - variable: "HEADER_PREFIX"
+      description: "HEADER_PREFIX"
+      label: "HEADER_PREFIX"
+      default: "X-Application-"
+      required: true
+      type: string
+    - variable: "PORT"
+      description: "PORT"
+      label: "PORT"
+      default: "8000"
+      required: true
+      type: string
+    - variable: "UPSTREAM_NAME"
+      description: "UPSTREAM_NAME"
+      label: "UPSTREAM_NAME"
+      default: "api"
+      required: true
+      type: string
+    - variable: "UPSTREAM_PORT"
+      description: "UPSTREAM_PORT"
+      label: "UPSTREAM_PORT"
+      default: "8000"
+      required: true
+      type: string
