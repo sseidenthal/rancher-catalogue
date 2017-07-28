@@ -50,3 +50,77 @@
       required: true
       type: string
       default: 8.8.8.8
+
+    - 
+      variable: IMAGE
+      label: Image
+      description: Image
+      required: true
+      type: string
+      default: 912028902405.dkr.ecr.eu-west-1.amazonaws.com/pcc_file_repository
+
+    - 
+      variable: IMAGE_TAG
+      label: Image Tag
+      description: Image Tag
+      required: true
+      type: enum
+      options:
+        - master
+        - qa
+        - uat
+
+    - 
+      variable: DATABASE_NAME
+      label: Database Name
+      description: Database Name
+      required: true
+      type: string
+      default: api_file_repository
+
+    - 
+      variable: DATABASE_HOST
+      label: Database Host
+      description: Database name
+      required: true
+      type: string
+      default: mysql
+
+    - 
+      variable: DATABASE_PORT
+      label: Database Port
+      description: Database Port
+      required: true
+      type: string
+      default: 3306
+
+    - 
+      variable: DATABASE_USERNAME
+      label: Database Username
+      description: Database Username
+      required: true
+      type: string
+
+    - 
+      variable: DATABASE_PASSWORD
+      label: Database Password
+      description: Database Password
+      required: true
+      type: string
+
+    - 
+      variable: LOGGED_USER
+      label: Logged in user (will be removed)
+      description: Logged in user (will be removed)
+      required: true
+      type: string
+      default: homer_simpson
+
+    - 
+      variable: UPLOAD_FOLDER
+      label: Upload Folder
+      description: Upload Folder
+      required: true
+      type: string
+      default: /var/www/html/uploads/
+
