@@ -81,10 +81,9 @@
     - 
       variable: DATABASE_HOST
       label: Database Host
-      description: Database name
+      description: Database Host
       required: true
-      type: string
-      default: mysql
+      type: service
 
     - 
       variable: DATABASE_PORT

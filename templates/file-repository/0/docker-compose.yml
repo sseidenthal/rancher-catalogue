@@ -32,7 +32,7 @@ services:
       UPLOAD_FOLDER: ${UPLOAD_FOLDER}
     stdin_open: true
     external_links:
-    - infrastructure/mysql-server:mysql
+    - ${DATABASE_HOST}:mysql
     tty: true
     labels:
       io.rancher.container.pull_image: always
