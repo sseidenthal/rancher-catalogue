@@ -1,0 +1,52 @@
+--- 
+.catalog: 
+  description: "File Repository API"
+  name: "File Repository API"
+  version: 1.0-rancher
+  questions: 
+    -
+      variable: DOMAIN_NAME
+      label: Domain name
+      description: Domain name under which Traefik should match
+      required: true
+      type: string
+
+    -
+      variable: API_PATH_PREFIX
+      label: Api Path Prefix
+      description: Path used on Traefik to match your Api
+      required: true
+      type: string
+
+    - 
+      variable: OPENAM_POLICY_ENDPOINT_URL
+      label: OpenAM Policy Enforcement Url
+      description: This is the URL the PEP calls in order to check if the user is Authorized to access a resource
+      required: true
+      type: enum
+      options:
+        - https://sso-lab.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+        - https://sso-uat.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+        - https://uat.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+    - 
+      variable: OPENAM_POLICY_APPLICATION_NAME
+      label: OpenAM Policy Set Name
+      description: Name of the Policy Set whih is handling resources for a specific API
+      required: true
+      type: string
+
+    - 
+      variable: HEADER_PREFIX
+      label: Header Prefix
+      description: PEP will insert any attributes returned from the PDP into the Headers towards the API prefixed by this string
+      required: true
+      type: string
+      default: X-Application-
+
+    - 
+      variable: RESOLVER
+      label: DNS Server IP Address
+      description: specify a DNS Server
+      required: true
+      type: string
+      default: 8.8.8.8
