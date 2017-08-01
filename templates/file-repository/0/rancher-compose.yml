@@ -95,16 +95,16 @@
 
     - 
       variable: DATABASE_USERNAME_FILE
-      label: Database Username
-      description: Database Username
+      label: Database Username Secret
+      description: Database Username Secret
       required: true
       type: string
       default: /run/secrets/mysql_api_file_repository_username
 
     - 
       variable: DATABASE_PASSWORD_FILE
-      label: Database Password
-      description: Database Password
+      label: Database Password Secret
+      description: Database Password Secret
       required: true
       type: string
       default: /run/secrets/mysql_api_file_repository_password
