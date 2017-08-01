@@ -99,6 +99,7 @@
       description: Database Username
       required: true
       type: string
+      default: /run/secrets/mysql_api_file_repository_username
 
     - 
       variable: DATABASE_PASSWORD
@@ -106,6 +107,7 @@
       description: Database Password
       required: true
       type: string
+      default: /run/secrets/mysql_api_file_repository_password
 
     - 
       variable: LOGGED_USER

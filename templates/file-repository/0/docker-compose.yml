@@ -22,6 +22,9 @@ services:
 
   api:
     image: ${IMAGE}:${IMAGE_TAG}
+    secrets:
+      - mysql_api_file_repository_username
+      - mysql_api_file_repository_password
     environment:
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_HOST: mysql
