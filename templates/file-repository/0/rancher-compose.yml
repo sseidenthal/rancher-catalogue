@@ -82,7 +82,7 @@
       description: Database Name
       required: true
       type: string
-      default: api_file_repository
+      default: api_file_repo
 
     - 
       variable: DATABASE_HOST
