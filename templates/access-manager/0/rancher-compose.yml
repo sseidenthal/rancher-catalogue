@@ -1,0 +1,158 @@
+--- 
+.catalog: 
+  description: "File Repository API"
+  name: "File Repository API"
+  version: 1.0-rancher
+  questions: 
+    -
+      variable: DOMAIN_NAME
+      label: Domain name
+      description: Domain name under which Traefik should match
+      required: true
+      type: string
+
+    -
+      variable: API_PATH_PREFIX
+      label: Api Path Prefix
+      description: Path used on Traefik to match your Api
+      required: true
+      type: string
+
+    - 
+      variable: OPENAM_POLICY_ENDPOINT_URL
+      label: OpenAM Policy Enforcement Url
+      description: This is the URL the PEP calls in order to check if the user is Authorized to access a resource
+      required: true
+      type: enum
+      options:
+        - https://sso-lab.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+        - https://sso-qa.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+        - https://sso-uat.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+        - https://sso.controlcenter.lu/sso/json/pcc/policies?_action=evaluate
+    -
+      variable: OPENAM_POLICY_APPLICATION_NAME
+      label: OpenAM Policy Set Name
+      description: Name of the Policy Set whih is handling resources for a specific API
+      required: true
+      type: string
+
+    - 
+      variable: HEADER_PREFIX
+      label: Header Prefix
+      description: PEP will insert any attributes returned from the PDP into the Headers towards the API prefixed by this string
+      required: true
+      type: string
+      default: X-Application-
+
+    - 
+      variable: RESOLVER
+      label: DNS Server IP Address
+      description: specify a DNS Server
+      required: true
+      type: string
+      default: 192.168.100.50
+
+    - 
+      variable: IMAGE
+      label: Image
+      description: Image
+      required: true
+      type: string
+      default: 912028902405.dkr.ecr.eu-west-1.amazonaws.com/pcc_api_access_manager_v2
+
+    - 
+      variable: IMAGE_TAG
+      label: Image Tag
+      description: Image Tag
+      required: true
+      type: enum
+      options:
+        - master
+        - qa
+        - uat
+
+    - 
+      variable: DATABASE_HOST
+      label: Database Host
+      description: Database Host
+      required: true
+      type: service
+
+    - 
+      variable: DATABASE_PORT
+      label: Database Port
+      description: Database Port
+      required: true
+      type: string
+      default: 3306
+
+    -
+      variable: MYSQL_ACCESS_MANAGER_DATABASE
+      label: Access Manager Database Name
+      description: Database Name
+      required: true
+      type: string
+      default: api_access_manager_v2
+
+    - 
+      variable: MYSQL_ACCESS_MANAGER_USER_FILE
+      label: Database Username Secret
+      description: Database Username Secret
+      required: true
+      type: string
+      default: /run/secrets/mysql_api_access_manager_v2_username
+
+    - 
+      variable: MYSQL_ACCESS_MANAGER_PASSWORD_FILE
+      label: Database Password Secret
+      description: Database Password Secret
+      required: true
+      type: string
+      default: /run/secrets/mysql_api_access_manager_v2_password
+
+    -
+      variable: MYSQL_CORE_DATABASE
+      label: Core Database Name
+      description: Database Name
+      required: true
+      type: string
+      default: post
+
+    -
+      variable: MYSQL_CORE_USER_FILE
+      label: Database Username Secret
+      description: Database Username Secret
+      required: true
+      type: string
+      default: /run/secrets/mysql_post_username
+
+    -
+      variable: MYSQL_CORE_PASSWORD
+      label: Database Password Secret
+      description: Database Password Secret
+      required: true
+      type: string
+      default: /run/secrets/mysql_post_password
+
+    -
+      variable: MYSQL_CONTACTS_DATABASE
+      label: Contacts Database Name
+      description: Database Name
+      required: true
+      type: string
+      default: api_contacts
+    -
+      variable: MYSQL_CONTACTS_USER_FILE
+      label: Database Username Secret
+      description: Database Username Secret
+      required: true
+      type: string
+      default: /run/secrets/mysql_api_contacts_username
+
+    -
+      variable: MYSQL_CONTACTS_PASSWORD_FILE
+      label: Database Password Secret
+      description: Database Password Secret
+      required: true
+      type: string
+      default: /run/secrets/mysql_api_contacts_password

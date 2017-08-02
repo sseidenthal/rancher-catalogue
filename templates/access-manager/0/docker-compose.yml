@@ -1,0 +1,51 @@
+version: '2'
+services:
+  pep:
+    image: docker.io/sseidenthal/pep
+    environment:
+      OPENAM_POLICY_ENDPOINT_URL: ${OPENAM_POLICY_ENDPOINT_URL}
+      OPENAM_POLICY_ENDPOINT_METHOD: POST
+      OPENAM_POLICY_APPLICATION_NAME: ${OPENAM_POLICY_APPLICATION_NAME}
+      HEADER_PREFIX: ${HEADER_PREFIX}
+      RESOLVER: ${RESOLVER}
+    stdin_open: true
+    dns:
+    - ${RESOLVER}
+    tty: true
+    links:
+    - api:api
+    labels:
+      traefik.frontend.rule: Host:${DOMAIN_NAME};PathPrefixStrip:${API_PATH_PREFIX}
+      traefik.port: '80'
+      traefik.enable: 'true'
+      io.rancher.scheduler.global: 'true'
+
+  api:
+    image: ${IMAGE}:${IMAGE_TAG}
+    secrets:
+      - mysql_api_access_manager_username
+      - mysql_api_access_manager_password
+      - mysql_api_contacts_username
+      - mysql_api_contacts_password
+      - mysql_post_username
+      - mysql_post_password
+    environment:
+      MYSQL_ACCESS_MANAGER_HOST: mysql
+      MYSQL_ACCESS_MANAGER_DATABASE: ${MYSQL_ACCESS_MANAGER_DATABASE}
+      MYSQL_ACCESS_MANAGER_USER: ${MYSQL_ACCESS_MANAGER_USER}
+      MYSQL_ACCESS_MANAGER_PASSWORD: ${MYSQL_ACCESS_MANAGER_PASSWORD}
+      MYSQL_CORE_HOST: mysql
+      MYSQL_CORE_DATABASE: ${MYSQL_CORE_DATABASE}
+      MYSQL_CORE_USER: ${MYSQL_CORE_USER}
+      MYSQL_CORE_PASSWORD: ${MYSQL_CORE_PASSWORD}
+      MYSQL_CONTACTS_HOST: mysql
+      MYSQL_CONTACTS_DATABASE: ${MYSQL_CONTACTS_DATABASE}
+      MYSQL_CONTACTS_USER: ${MYSQL_CONTACTS_USER}
+      MYSQL_CONTACTS_PASSWORD: ${MYSQL_CONTACTS_PASSWORD}
+    stdin_open: true
+    external_links:
+    - ${DATABASE_HOST}:mysql
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global: 'true'
