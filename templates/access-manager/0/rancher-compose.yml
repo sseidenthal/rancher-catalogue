@@ -106,7 +106,7 @@
       description: Database Username Secret
       required: true
       type: string
-      default: /run/secrets/mysql_api_access_manager_v2_username
+      default: mysql_api_access_manager_v2_username
 
     - 
       variable: MYSQL_ACCESS_MANAGER_PASSWORD_FILE
@@ -114,7 +114,7 @@
       description: Database Password Secret
       required: true
       type: string
-      default: /run/secrets/mysql_api_access_manager_v2_password
+      default: mysql_api_access_manager_v2_password
 
     -
       variable: MYSQL_CORE_DATABASE
@@ -130,7 +130,7 @@
       description: Database Username Secret
       required: true
       type: string
-      default: /run/secrets/mysql_post_username
+      default: mysql_post_username
 
     -
       variable: MYSQL_CORE_PASSWORD
@@ -138,7 +138,7 @@
       description: Database Password Secret
       required: true
       type: string
-      default: /run/secrets/mysql_post_password
+      default: mysql_post_password
 
     -
       variable: MYSQL_CONTACTS_DATABASE
@@ -153,7 +153,7 @@
       description: Database Username Secret
       required: true
       type: string
-      default: /run/secrets/mysql_api_contacts_username
+      default: mysql_api_contacts_username
 
     -
       variable: MYSQL_CONTACTS_PASSWORD_FILE
@@ -161,4 +161,4 @@
       description: Database Password Secret
       required: true
       type: string
-      default: /run/secrets/mysql_api_contacts_password
+      default: mysql_api_contacts_password

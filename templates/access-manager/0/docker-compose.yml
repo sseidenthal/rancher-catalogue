@@ -23,25 +23,25 @@ services:
   api:
     image: ${IMAGE}:${IMAGE_TAG}
     secrets:
-      - mysql_api_access_manager_username
-      - mysql_api_access_manager_password
-      - mysql_api_contacts_username
-      - mysql_api_contacts_password
-      - mysql_post_username
-      - mysql_post_password
+      - ${MYSQL_ACCESS_MANAGER_USER}
+      - ${MYSQL_ACCESS_MANAGER_PASSWORD}
+      - ${MYSQL_CONTACTS_USER_FILE}
+      - ${MYSQL_CONTACTS_PASSWORD_FILE}
+      - ${MYSQL_CORE_USER}
+      - ${MYSQL_CORE_PASSWORD}
     environment:
       MYSQL_ACCESS_MANAGER_HOST: mysql
       MYSQL_ACCESS_MANAGER_DATABASE: ${MYSQL_ACCESS_MANAGER_DATABASE}
-      MYSQL_ACCESS_MANAGER_USER: ${MYSQL_ACCESS_MANAGER_USER}
-      MYSQL_ACCESS_MANAGER_PASSWORD: ${MYSQL_ACCESS_MANAGER_PASSWORD}
-      MYSQL_CORE_HOST: mysql
-      MYSQL_CORE_DATABASE: ${MYSQL_CORE_DATABASE}
-      MYSQL_CORE_USER: ${MYSQL_CORE_USER}
-      MYSQL_CORE_PASSWORD: ${MYSQL_CORE_PASSWORD}
+      MYSQL_ACCESS_MANAGER_USER: /run/secrets/${MYSQL_ACCESS_MANAGER_USER}
+      MYSQL_ACCESS_MANAGER_PASSWORD: /run/secrets/${MYSQL_ACCESS_MANAGER_PASSWORD}
       MYSQL_CONTACTS_HOST: mysql
       MYSQL_CONTACTS_DATABASE: ${MYSQL_CONTACTS_DATABASE}
-      MYSQL_CONTACTS_USER: ${MYSQL_CONTACTS_USER}
-      MYSQL_CONTACTS_PASSWORD: ${MYSQL_CONTACTS_PASSWORD}
+      MYSQL_CONTACTS_USER: /run/secrets/${MYSQL_CONTACTS_USER_FILE}
+      MYSQL_CONTACTS_PASSWORD: /run/secrets/${MYSQL_CONTACTS_PASSWORD_FILE}
+      MYSQL_CORE_HOST: mysql
+      MYSQL_CORE_DATABASE: ${MYSQL_CORE_DATABASE}
+      MYSQL_CORE_USER: /run/secrets/${MYSQL_CORE_USER}
+      MYSQL_CORE_PASSWORD: /run/secrets/${MYSQL_CORE_PASSWORD}
     stdin_open: true
     external_links:
     - ${DATABASE_HOST}:mysql
