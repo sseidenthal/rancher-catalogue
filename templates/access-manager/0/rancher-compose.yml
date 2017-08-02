@@ -133,7 +133,7 @@
       default: mysql_post_username
 
     -
-      variable: MYSQL_CORE_PASSWORD
+      variable: MYSQL_CORE_PASSWORD_FILE
       label: Database Password Secret
       description: Database Password Secret
       required: true
