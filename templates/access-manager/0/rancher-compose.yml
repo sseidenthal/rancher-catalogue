@@ -21,6 +21,7 @@
       description: Path used on Traefik to match your Api
       required: true
       type: string
+      default: /access-manager
 
     - 
       variable: OPENAM_POLICY_ENDPOINT_URL
@@ -39,6 +40,7 @@
       description: Name of the Policy Set whih is handling resources for a specific API
       required: true
       type: string
+      default: API_ACCESS_MANAGER
 
     - 
       variable: HEADER_PREFIX
