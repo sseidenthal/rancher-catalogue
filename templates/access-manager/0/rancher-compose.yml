@@ -11,9 +11,9 @@
       required: true
       type: enum
       options:
-        - apps-qa.controlcenter.lu
-        - apps-uat.controlcenter.lu
-        - apps.controlcenter.lu
+        - api-qa.controlcenter.lu
+        - api-uat.controlcenter.lu
+        - api.controlcenter.lu
 
     -
       variable: API_PATH_PREFIX
