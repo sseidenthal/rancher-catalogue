@@ -21,6 +21,7 @@
       description: Path used on Traefik to match your Api
       required: true
       type: string
+      default: /file-repository
 
     - 
       variable: OPENAM_POLICY_ENDPOINT_URL
@@ -38,6 +39,7 @@
       description: Name of the Policy Set whih is handling resources for a specific API
       required: true
       type: string
+      default: API_FILE_REPOSITORY
 
     - 
       variable: HEADER_PREFIX
@@ -53,7 +55,7 @@
       description: specify a DNS Server
       required: true
       type: string
-      default: 8.8.8.8
+      default: 192.168.100.50
 
     - 
       variable: IMAGE
