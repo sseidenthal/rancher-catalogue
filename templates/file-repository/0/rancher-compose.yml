@@ -105,7 +105,7 @@
       description: Database Username Secret
       required: true
       type: string
-      default: /run/secrets/mysql_api_file_repo_username
+      default: mysql_api_file_repo_username
 
     - 
       variable: DATABASE_PASSWORD_FILE
@@ -113,7 +113,7 @@
       description: Database Password Secret
       required: true
       type: string
-      default: /run/secrets/mysql_api_file_repo_password
+      default: mysql_api_file_repo_password
 
     - 
       variable: LOGGED_USER
