@@ -106,7 +106,7 @@
       description: Database Username Secret
       required: true
       type: string
-      default: mysql_api_access_manager_v2_username
+      default: mysql_api_access_manager_username
 
     - 
       variable: MYSQL_ACCESS_MANAGER_PASSWORD_FILE
@@ -114,7 +114,7 @@
       description: Database Password Secret
       required: true
       type: string
-      default: mysql_api_access_manager_v2_password
+      default: mysql_api_access_manager_password
 
     -
       variable: MYSQL_CORE_DATABASE
