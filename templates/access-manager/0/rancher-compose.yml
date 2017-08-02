@@ -1,7 +1,7 @@
 --- 
 .catalog: 
-  description: "File Repository API"
-  name: "File Repository API"
+  description: "Access Manager API"
+  name: "Access Manager API"
   version: 1.0-rancher
   questions: 
     -
@@ -9,7 +9,11 @@
       label: Domain name
       description: Domain name under which Traefik should match
       required: true
-      type: string
+      type: enum
+      options:
+        - apps-qa.controlcenter.lu
+        - apps-uat.controlcenter.lu
+        - apps.controlcenter.lu
 
     -
       variable: API_PATH_PREFIX
