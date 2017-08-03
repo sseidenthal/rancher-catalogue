@@ -63,7 +63,7 @@
       description: Image
       required: true
       type: string
-      default: 912028902405.dkr.ecr.eu-west-1.amazonaws.com/pcc_file_repository
+      default: gitlab.cc.zone:5001/pcc/api/api_file_repository
 
     - 
       variable: IMAGE_TAG
