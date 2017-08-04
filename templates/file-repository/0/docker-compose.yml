@@ -1,7 +1,7 @@
 version: '2'
 services:
   pep:
-    image: docker.io/sseidenthal/pep
+    image: gitlab.cc.zone:5001/pcc/infrastructure/policy_enforcement_proxy:master
     environment:
       OPENAM_POLICY_ENDPOINT_URL: ${OPENAM_POLICY_ENDPOINT_URL}
       OPENAM_POLICY_ENDPOINT_METHOD: POST
